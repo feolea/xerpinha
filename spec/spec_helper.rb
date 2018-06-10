@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'pry-byebug'
+
 PROJECT_ROOT = File.expand_path('..', __dir__)
 
 Dir.glob(File.join(PROJECT_ROOT, 'lib', '*.rb')).each do |file|
