@@ -7,7 +7,8 @@ RSpec.describe Workload do
         args = {
           days: %w[mon tue wed thu fri],
           daily_workload_time: 300,
-          daily_minimum_rest_interval: 30
+          daily_minimum_rest_interval: 30,
+          rest_interval: 60
         }
 
         args.keys.each do |arg|
@@ -24,7 +25,8 @@ RSpec.describe Workload do
         args = {
           days: %w[mon tue],
           daily_workload_time: 300,
-          daily_minimum_rest_interval: 30
+          daily_minimum_rest_interval: 30,
+          rest_interval: 60
         }
 
         expect { Workload.new(args) }.to_not raise_error
@@ -38,7 +40,8 @@ RSpec.describe Workload do
       args = {
         days: days,
         daily_workload_time: 300,
-        daily_minimum_rest_interval: 30
+        daily_minimum_rest_interval: 30,
+        rest_interval: 60
       }
 
       workload = Workload.new(args)
@@ -53,7 +56,8 @@ RSpec.describe Workload do
       args = {
         days: %w[mon tue wed thu fri],
         daily_workload_time: daily_workload_time,
-        daily_minimum_rest_interval: 30
+        daily_minimum_rest_interval: 30,
+        rest_interval: 60
       }
 
       workload = Workload.new(args)
@@ -68,13 +72,31 @@ RSpec.describe Workload do
       args = {
         days: %w[mon tue wed thu fri],
         daily_workload_time: 240,
-        daily_minimum_rest_interval: daily_minimum_rest_interval
+        daily_minimum_rest_interval: daily_minimum_rest_interval,
+        rest_interval: 60
       }
 
       workload = Workload.new(args)
 
       expect(workload.daily_minimum_rest_interval)
         .to eq(daily_minimum_rest_interval)
+    end
+  end
+
+  describe '#rest_interval' do
+    it 'returns the same interval' do
+      rest_interval = 60
+      args = {
+        days: %w[mon tue wed thu fri],
+        daily_workload_time: 240,
+        daily_minimum_rest_interval: 15,
+        rest_interval: rest_interval
+      }
+
+      workload = Workload.new(args)
+
+      expect(workload.rest_interval)
+        .to eq(rest_interval)
     end
   end
 end
