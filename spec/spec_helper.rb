@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 require 'pry-byebug'
+require 'time'
 
-PROJECT_ROOT = File.expand_path('..', __dir__)
-
-Dir.glob(File.join(PROJECT_ROOT, 'lib', '*.rb')).each do |file|
-  autoload File.basename(file, '.rb').split('_').map(&:capitalize).join, file
+Dir[File.join('./lib', '**/*.rb')].each do |f|
+  require f
 end
 
 #
