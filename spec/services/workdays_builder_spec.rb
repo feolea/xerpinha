@@ -28,7 +28,7 @@ RSpec.describe Services::WorkdaysBuilder do
         '2018-04-19T21:00:00',
         '2018-04-18T11:55:00',
         '2018-04-19T23:20:00'
-      ].map { |entry| Time.parse(entry) }
+      ]
 
       workload_args = {
         days: %w[mon tue wed thu fri],
@@ -46,8 +46,8 @@ RSpec.describe Services::WorkdaysBuilder do
       }
       employee = Employee.new(employee_args)
 
-      start_date = Date.parse('2018-04-10')
-      end_date = Date.parse('2018-04-20')
+      start_date = '2018-04-10'
+      end_date = '2018-04-20'
       period = {
         start_date: start_date,
         end_date: end_date
@@ -92,6 +92,34 @@ RSpec.describe Services::WorkdaysBuilder do
           ]
         },
         {
+          date: '2018-04-13',
+          worked_time_in_minutes: 0,
+          balance_time_in_minutes: -300,
+          entries: [],
+          messages: [:absence]
+        },
+        {
+          date: '2018-04-14',
+          worked_time_in_minutes: 0,
+          balance_time_in_minutes: 0,
+          entries: [],
+          messages: [:rest_day]
+        },
+        {
+          date: '2018-04-15',
+          worked_time_in_minutes: 0,
+          balance_time_in_minutes: 0,
+          entries: [],
+          messages: [:rest_day]
+        },
+        {
+          date: '2018-04-16',
+          worked_time_in_minutes: 0,
+          balance_time_in_minutes: -300,
+          entries: [],
+          messages: [:absence]
+        },
+        {
           date: '2018-04-17',
           worked_time_in_minutes: 373,
           balance_time_in_minutes: 73,
@@ -123,6 +151,13 @@ RSpec.describe Services::WorkdaysBuilder do
             minimal_interval_not_reached
             extra_from_interval
           ]
+        },
+        {
+          date: '2018-04-20',
+          worked_time_in_minutes: 0,
+          balance_time_in_minutes: -300,
+          entries: [],
+          messages: [:absence]
         }
       ]
 

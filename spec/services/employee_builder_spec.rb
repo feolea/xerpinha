@@ -12,7 +12,7 @@ RSpec.describe Services::EmployeeBuilder do
         '2018-04-11T16:41:00',
         '2018-04-11T18:11:00',
         '2018-04-10T06:11:00'
-      ].map { |entry| Time.parse(entry) }
+      ]
 
       workload_args = {
         days: %w[mon tue wed thu fri],
@@ -30,8 +30,8 @@ RSpec.describe Services::EmployeeBuilder do
       }
       employee = Employee.new(employee_args)
 
-      start_date = Date.parse('2018-04-10')
-      end_date = Date.parse('2018-04-11')
+      start_date = '2018-04-10'
+      end_date = '2018-04-11'
       period = {
         start_date: start_date,
         end_date: end_date

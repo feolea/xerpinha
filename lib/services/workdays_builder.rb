@@ -23,19 +23,38 @@ module Services
       service.execute
     end
 
-    #
-    # TO-DO: merge with days that are not in entries, ex. in case of an absence.
-    #
     def entries_by_date
-      employee_entries.group_by { |entry| entry.strftime('%F') }
+      build_period(start_date, end_date)
+    end
+
+    def build_period(start_date, date)
+      return {} if date < start_date
+
+      build_period(start_date, date.prev_day)
+        .merge(
+          date.strftime('%F') =>
+          entries_in_time.select { |entry| entry.to_date.eql? date }
+        )
+    end
+
+    def entries_in_time
+      @entries_in_time ||= employee_entries.map { |entry| Time.parse(entry) }
     end
 
     def employee_entries
-      @employee.entries.sort
+      @employee_entries ||= @employee.entries.sort
     end
 
     def workload
       @workload ||= @employee.workload
+    end
+
+    def start_date
+      Date.parse(@period[:start_date])
+    end
+
+    def end_date
+      Date.parse(@period[:end_date])
     end
   end
 end
