@@ -16,11 +16,11 @@ This system was developed as a skill test.
 
 ## Usage
 
-The application will use an input file with a working period of some employees, 
+The application will use an input file with a working period of some employees,
 
 We have an example file at files/input.json, to use this file, after properly setup the application, run the rake task:
 
-`rake summarizer:execute['files/input.json']`
+`rake summarizer:execute\['files/input.json'\]`
 
 You could inform other path if you want. (relative to the root application like our example, or a full path)
 
@@ -32,9 +32,9 @@ You could inform other path if you want. (relative to the root application like 
 This project depends on Ruby described at `.ruby-version` file, if you dont known Ruby, take a look
 at [this](https://www.ruby-lang.org/en/documentation/installation/) and it is a good idea to use a manager like `rvm`, take a look [here](https://rvm.io/rvm/install).
 
-With ruby installed, 
+With ruby installed,
 
-After you've clone the project, 
+After you've clone the project,
 
 `$ cd xerpinha`
 
