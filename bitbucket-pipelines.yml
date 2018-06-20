@@ -1,0 +1,13 @@
+image: ruby:2.4.4-alpine
+pipelines:
+  default:
+    - step:
+        script:
+          - bundle install --path vendor/bundle
+          - bundle exec rspec
+          - bundle exec rubocop
+definitinions:
+  caches:
+    bundler: 
+      - .bundle
+      - vendor/bundle
