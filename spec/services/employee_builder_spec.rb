@@ -14,21 +14,18 @@ RSpec.describe Services::EmployeeBuilder do
         '2018-04-10T06:11:00'
       ]
 
-      workload_args = {
+      workload = {
         days: %w[mon tue wed thu fri],
-        daily_workload_time: 300,
-        daily_minimum_rest_interval: 15,
-        rest_interval: 60
+        workload_in_minutes: 300,
+        minimum_rest_interval_in_minutes: 15
       }
-      workload = Workload.new(workload_args)
 
-      employee_args = {
+      employee = {
         name: name,
-        pis: pis,
+        pis_number: pis,
         workload: workload,
         entries: entries
       }
-      employee = Employee.new(employee_args)
 
       start_date = '2018-04-10'
       end_date = '2018-04-11'
@@ -36,6 +33,7 @@ RSpec.describe Services::EmployeeBuilder do
         start_date: start_date,
         end_date: end_date
       }
+
       params = { employee: employee, period: period }
 
       employee_builder = described_class.new(params)
