@@ -1,13 +1,17 @@
-image: ruby:2.4.4-alpine
+image: ruby:2.4.4
 pipelines:
   default:
     - step:
+        name: 'Test'
         script:
           - bundle install --path vendor/bundle
           - bundle exec rspec
+    - step:
+        name: 'Quality'
+        script:
+          - bundle install --path vendor/bundle
           - bundle exec rubocop
-definitinions:
+
+definitions:
   caches:
-    bundler: 
-      - .bundle
-      - vendor/bundle
+    bundler: vendor/bundle

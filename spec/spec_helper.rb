@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry-byebug'
 require 'time'
 
 Dir[File.join('./lib', '**/*.rb')].each do |f|
