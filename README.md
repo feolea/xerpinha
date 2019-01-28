@@ -1,18 +1,18 @@
 # Xerpinha
 
 ## Summary
-- [About](https://bitbucket.org/feolea/xerpinha/src/master/#about)
-- [Usage](https://bitbucket.org/feolea/xerpinha/src/master/#usage)
-- [Setup](https://bitbucket.org/feolea/xerpinha/src/master/#setup)
-- [Tests](https://bitbucket.org/feolea/xerpinha/src/master/#tests)
-- [Comments](https://bitbucket.org/feolea/xerpinha/src/master/#helpful-links)
+- [About](https://github.com/feolea/xerpinha/#about)
+- [Usage](https://github.com/feolea/xerpinha/#usage)
+- [Setup](https://github.com/feolea/xerpinha/#setup)
+- [Tests](https://github.com/feolea/xerpinha/#tests)
+- [Comments](https://github.com/feolea/xerpinha/#helpful-links)
 
 ## About
 
 This system was developed as a skill test.
 
 
-[Back to top](https://bitbucket.org/feolea/xerpinha/src/master/#summary)
+[Back to top](https://github.com/feolea/xerpinha/#summary)
 
 ## Usage
 
@@ -25,7 +25,7 @@ We have an example file at files/input.json, to use this file, after properly se
 You could inform other path if you want. (relative to the root application like our example, or a full path)
 
 
-[Back to top](https://bitbucket.org/feolea/xerpinha/src/master/#summary)
+[Back to top](https://github.com/feolea/xerpinha/#summary)
 
 ## Setup
 
@@ -44,7 +44,7 @@ and
 
 Done!
 
-[Back to top](https://bitbucket.org/feolea/xerpinha/src/master/#summary)
+[Back to top](https://github.com/feolea/xerpinha/#summary)
 
 ## Tests
 
@@ -53,11 +53,11 @@ To run test suite, just:
 `$ rspec spec`
 
 
-[Back to top](https://bitbucket.org/feolea/xerpinha/src/master/#summary)
+[Back to top](https://github.com/feolea/xerpinha/#summary)
 
 ## Comments
 
-- We do not have the Default rest interval at input file (just the minimum), so I decided to put an Default of 60 minutes, as an constant [here](https://bitbucket.org/feolea/xerpinha/src/422ee54fd6a6d7ccfb3f2d5f0add9c3ec6cfbbf8/lib/services/employee_builder.rb#lines-21)
+- We do not have the Default rest interval at input file (just the minimum), so I decided to put an Default of 60 minutes, as an constant [here](https://github.com/feolea/xerpinha/blob/master/lib/services/employee_builder.rb#L21)
 
 - I left one test skipped, and in this release I do not consider that one employee could make more than one interval at the same day.
 
